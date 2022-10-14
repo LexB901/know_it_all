@@ -1,0 +1,916 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* 
+====================== BELANGRIJK =========================
+Dit zijn de styles voor alle paginas, dingen hier veranderen veranderd elke pagina 
+============================================================*/
+
+* {
+    font-size: max(20px, 1.5vw);
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+
+/* -----------------------------------------------------
+ACHTERGROND \/
+-------------------------------------------------------- */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 2.1rem;
+    height: 1.25rem;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+
+    /* The slider */
+    .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+    .slider.norm:before, .nintendo:after {
+    position: absolute;
+    content: "";
+    height: 1.1rem;
+    width: 1.1rem;
+    left: 0.07rem;
+    bottom: 0.065rem;
+    background-color: #006FCD;
+    /*background-image: url(https://www.vhv.rs/dpng/d/477-4777087_transparent-tales-of-zestiria-png-new-playstation-network.png);
+    */
+    background-position: center;
+    background-size: cover;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+    .nintendo:after {
+        background-color: #E70013 !important;
+    }
+
+    #ninKnop {
+    opacity: 0;
+    border-radius: 100%;
+    z-index: 100;
+    position: absolute;
+    content: "";
+    left: 4px;
+    bottom: 4px;
+    background-color: #E70013;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+    input:checked + .slider:before, input:checked + .nintendo:after {
+    /*background-image: url(https://e7.pngegg.com/pngimages/765/892/png-clipart-xbox-logo-xbox-one-playstation-4-xbox-360-xbox-logo-electronics-computer-wallpaper.png);
+    */
+    background-color: #09EB09;
+    }
+
+    input:focus + .slider:before, input:focus + .nintendo:after {
+
+    box-shadow: none;
+    }
+
+    input:checked + .slider:before, input:checked + .nintendo:after {
+    -webkit-transform: translateX(0.84rem);
+    -ms-transform: translateX(0.84rem);
+    transform: translateX(0.84rem);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+    border-radius: 34px;
+    }
+
+    .slider.round:before,.nintendo.round:after {
+    border-radius: 50%;
+    } 
+    .disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+    .achtergrond {
+        z-index: -1;
+        opacity: 1;
+        transition: .4s;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+
+    }
+    .xboxStyle {
+        opacity: 1;
+        background: linear-gradient(180deg, #00B929 0%, #4cec59 100%), #FFFFFF;
+    }
+    .psStyle {
+        opacity: 1;
+        background: linear-gradient(180deg, #006FCD 0%, #003058 100%), #FFFFFF;
+    }
+    .nStyle {
+        opacity: 1;
+        background-image: url(https://assets.nintendo.com/image/upload/f_auto,q_auto/ncom/en_US/merchandising/color?v=2021052718);
+    }
+    #styleSwitch {
+        position: relative;
+        margin-left: 20px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 100%;
+    }
+
+    /* knoppern */
+    /* knoppern 1*/
+    .submitKnop {
+        color: white;
+        cursor: pointer;
+        border: none;
+        background: #1DB900;
+        box-shadow: none;
+        width: 6rem;
+        height: 1.8rem;
+        border-radius: 5px;
+        transition: 0.2s;
+    }
+    #submitKnop1 {
+        color: white;
+        cursor: pointer;
+        border: none;
+        background: #1DB900;
+        box-shadow: none;
+        width: 6rem;
+        height: 1.8rem;
+        border-radius: 5px;
+        transition: 0.2s;
+    }
+
+    .submitKnop:hover {
+        transform: translate(-3px,-3px);
+        box-shadow: 3px 3px;
+    }
+    .submitKnop:active {
+        transform: translate(0,0);
+        box-shadow: 0 0, 0 0;
+    }
+
+/* -----------------------------------------------------
+ACHTERGROND ^^^^
+-------------------------------------------------------- */
+
+/* --------------- HEADER Styles -------------- */
+
+header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: white;
+    width: 100%;
+    top: 0;
+    position: relative;
+    height: 80px;
+    
+}
+.titel {
+    font-weight: bold;
+    font-size: 1.8rem;
+
+}
+.navKnop:visited {
+    color: white;
+}
+.navKnop {
+    cursor: pointer;
+    color: white;
+    transition: 0.1s color ease-in;
+}
+.navKnop:hover {
+    color: rgb(212, 212, 212);
+}
+.headerNavKnop {
+    margin-left: 1.5rem;
+}
+.logKnop {
+    position: absolute;
+    right: 40px;
+}
+.logKnoppen {
+    position: absolute;
+    right: 40px;
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* --------------- MAIN Styles -------------- */
+main {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#boxen {
+    display: flex;
+    justify-content: center;
+    gap: 7rem;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+.grootBox {
+    overflow: auto;
+    padding: 20px;
+    color: #272727;
+    /* position: relative; */
+    width: 19rem;
+    height: 13rem; 
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.74);
+    box-shadow: 3px 3px rgba(37, 37, 37, 0.493);
+}
+.grootBox:nth-child(2) {
+    width: 25rem;
+    height: max-content;
+    min-height: 13rem;
+    max-height: 34rem;
+    margin-bottom: 50px;
+}
+.grootBox p {
+    overflow-y: hidden;
+    width: 100%;
+    word-wrap: break-word;
+}
+#labels label {
+    position: relative;
+    color: white;
+    font-size: 1.1rem;
+    bottom: 5px;
+   
+}
+#labels label:nth-child(2) {
+    bottom: 35px;
+    right: 0px;
+}
+#labels label:nth-child(1) {
+    right: 140px;
+}
+.grootBox p {
+    line-height: 40px;
+    font-size: 1rem;
+    font-weight: 300;
+}
+#labels {
+    margin-top: 3.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    flex-wrap: wrap;
+    position: absolute;
+}
+
+.registratieContainer {
+    border: 1px black solid;
+    margin-top: 2rem;
+    width: 60%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.616);
+}
+.textKnopAnimatie:after {
+    backface-visibility: hidden;
+    content: '';
+    transition: 0.2s;
+    overflow: hidden;
+    width: 0;
+    display: block;
+    margin-left: 80%;
+    position: relative;
+    border-bottom: rgba(0, 0, 0, 0.699) 2px solid;
+}
+.textKnopAnimatie:hover:after {
+    width: 19.5%;
+    
+    
+}
+.registratieContainer h1{
+    font-weight: 400;
+    font-size: 2rem;
+}
+.inputVeld {
+    display: flex;
+    flex-direction: column;
+    
+}
+.inputVeld input {
+    padding: 2px;
+    border-radius: 5px;
+    background-color: #F2F2F2;
+    border: 1px solid black;
+    height: 40px;
+    width: 18rem;
+}
+
+#buttonDiv {
+    width: 90%;
+    height: 2.5rem;
+    position: relative;
+}
+
+#submitKnop1 {
+    position: absolute;
+    right: 0;
+}
+.nintendoKleur {
+    color: white;
+}
+.error {
+    width: 92%;
+    margin: 0px auto;
+    padding: 10px;
+    border: 1px solid #a94442;
+    color: #a94442;
+    background: #f2dede;
+    border-radius: 5px;
+    text-align: left;
+}
+.success {
+    color: #3c763d;
+    background: #dff0d8;
+    border: 1px solid #3c763d;
+    margin-bottom: 20px;
+}
+
+#weetjeStuurder {
+    top: 10px;
+    position: fixed;
+    right: 20px;
+    border: 1px black solid;
+    margin-top: 2rem;
+    width: 400px;
+    height: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.916);
+    z-index: 100;
+}
+
+#fileInputContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+#fileInputLabel {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(29, 185, 0);
+}
+
+#wegKnopWeetjeStuurder {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+    top: 3px;
+}
+
+.titelText {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#altMain {
+    margin-top: 3rem;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    height: unset;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    flex-wrap: unset;
+}
+
+#restContainer {
+    background-color: rgba(255, 255, 255, 0.816);
+    border-radius: 20px;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.weetjeDiv {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    width: 70%;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    min-height: 150px;
+    height: 150px;
+}
+.weetjeDiv img {
+    height: auto;
+    width: 70%;
+}
+.weetjeInfo {
+    overflow: unset !important;
+    display: flex;
+    min-height: 0;
+    justify-content: space-between;
+}
+.weetje {
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.naamZoekKnop {
+    color: #0645AD;
+    cursor: pointer;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.naamZoekKnop:visited {
+    color: #0B0080;
+}
+
+.verwijder {
+    text-align: center;
+    background-image: url("images/verwijder2.png");
+    background-position: center;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    padding: 0 4px 0 4px !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.verwijder:hover {
+    background-image: url("images/verwijder3.png");
+}
+.edit {
+    text-align: center;
+    background-image: url("images/edit2.png");
+    background-position: center;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    padding: 0 4px 0 4px;
+    color: white;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.edit:hover {
+    transform: rotate(270deg);
+}
+
+#editKnoppen {
+
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* tooltip styles */
+
+.tooltip {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+
+    font-size: 0.6rem;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+pre {
+    background: white;
+    width: 100%;
+    height: 1000px;
+    overflow: scroll;
+}
+pre:before {
+    color: red;
+    font-weight: bolder;
+    content: "DEBUG SCHERM - ";
+}
+
+/* limitBar styles */
+
+.limitBar {
+    gap: 5px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.limitKnop {
+    opacity: 0.7;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.816);
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+.huidig {
+    opacity: 1 !important;
+}
+
+#zoekCentrum {
+    font-size: 0.8rem;
+    justify-content: space-evenly;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    display: grid;
+    color: black;
+    height: 100%;
+    background-color: white;
+    width: 90%;
+    padding: 20px;
+    border-radius: 20px;
+    grid-auto-flow: row;
+    text-align: center;
+}
+
+#zoekCentrum input[type=text], #gebruikerDataList {
+    font-size: 0.8rem;
+    background-color: #F0F0F0;
+    border: 2px solid black;
+    color: black;
+    border-radius: 3px;
+    text-align: center;
+    width: 7rem;
+}
+#zoekCentrum select {
+    background-color: #F0F0F0;
+    border: 2px solid black;
+    color: black;
+    border-radius: 3px;
+    text-align: center;
+    width: 130px;
+
+}
+
+.zoekInput[type=date] {
+    background-color: #F0F0F0;
+    border: 2px solid black;
+    color: black;
+    border-radius: 3px;
+    text-align: center;
+    width: 100%;
+}
+
+.zoekInput option {
+    font-size: 0.8rem;
+}
+#zoekCentrum label {
+    grid-row: 1;
+    grid-column: auto;
+}
+.zoekInput {
+    width: 100% !important;
+    font-size: 0.8rem;
+    grid-column: auto;
+    grid-row: 2;
+}
+
+
+
+#zoekCentrum input[type=submit],#zoekCentrum input[type=reset]  {
+    font-size: 0.8rem;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    width: 4rem;
+    cursor: pointer;
+
+}
+
+#persInfo {
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#editFormBackground {
+    top: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#editForm {
+
+    overflow: auto;
+    z-index: 10000;
+    background: white;
+    border-radius: 20px;
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+}
+.editFormTexts {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.editFormTexts label {
+    margin-top: 20px;
+}
+#editForm .submitKnop {
+    margin-bottom: 5%;
+}
+.editFormTexts input {
+
+    width: 50%;
+    border: black 2px solid;
+    padding: 1px;
+    border-radius: 5px;
+}
+.editFormTexts input[readonly] {
+
+    cursor: not-allowed;
+    color: #4e4e4e;
+}
+#editForm textarea {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 90%;
+    height: 10%;
+}
+
+.op-btn{
+    position: absolute;
+    right: 30px;
+    bottom: 15px;
+    background: none;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+
+
+.topnav {
+    background-color: #006FCD;
+    position: absolute;
+    top: 1000px;
+    right: 0;
+    opacity: 0
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+    display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+    background-color: #006FCD;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+
+    background-color: #ddd;
+    color: #006FCD;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+    position: relative;
+    opacity: 0;
+    color: white;
+    background-color: black;
+}
+
+
+/* Voor PC */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 1100px) {
+    #labels label:nth-child(2) {
+        right: 250px;
+        top: 410px;
+    }
+    #labels label:nth-child(1) {
+        right: -28%;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .headerNavKnop {
+        opacity: 0;
+        bottom: 0;
+        position: absolute;
+        top: 1000px;
+    }
+    .logKnop {
+        opacity: 0;
+        bottom: 0;
+        position: absolute;
+        top: 1000px;
+    }
+    .topnav {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Voor telefoons: */
+    [class*="col-"] {
+      width: 100%;
+    }
+  }
+@media only screen and (max-width: 1600px) {
+    .weetjeDiv {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 722px) {
+    #labels label:nth-child(2) {
+        right: 0%;
+        top: 180px;
+    }
+    #labels label:nth-child(1) {
+        right: 0%;
+    }
+    .weetjeDiv {
+        width: 90%;
+    }
+    #zoekCentrum {
+        display: block;
+    }
+    #zoekCentrum input[type=submit], #zoekCentrum input[type=reset] {
+        width: 100%;
+    }
+    select {
+        text-align-last: center;
+    }
+    .registratieContainer {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .grootBox:nth-child(2) {
+        width: 80%;
+    }
+    .grootBox {
+        width: 80%;
+    }
+    #styleSwitch {
+        position: absolute;
+        opacity: 0;
+        top: 1000px;
+    }
+    .titel {
+        position: absolute;
+        left: 10%   ;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #weetjeStuurder {
+        position: absolute;
+        right: 5%;
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    #boxen {
+        position: relative;
+        top: 60px;
+    }
+    #labels label:nth-child(2) {
+        right: 0%;
+        top: 240px;
+    }
+    #labels label:nth-child(1) {
+        right: 0%;
+        top: 60px;
+    }
+    .inputVeld input {
+        width: 15rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .inputVeld input {
+        width: 12rem;
+    }
+}
+
+
+
